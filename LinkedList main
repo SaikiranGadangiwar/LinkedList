@@ -1,0 +1,28 @@
+package com.company;
+
+import java.util.Scanner;
+
+public class Main {
+
+    public static void main(String[] args) {
+        LL list=new LL();
+        list.insertFirst(12);
+        list.insertFirst(13);
+        list.insertFirst(14);
+        list.insertFirst(15);
+        list.display();
+        list.insertLast(16);
+        list.display();
+        // inserting n no. of node at same time
+        Scanner sc = new Scanner(System.in);
+        int n = sc.nextInt();
+        for(int i=0;i<n;i++)
+        {
+            int x = sc.nextInt();
+            list.insertFirst(x);
+        }
+        list.display();
+
+
+    }
+}
