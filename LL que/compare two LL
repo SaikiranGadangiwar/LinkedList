@@ -1,0 +1,83 @@
+import java.util.*;
+import java.lang.*;
+import java.io.*;
+
+class Node{
+         int data;
+         Node next;
+       Node(int data){
+          this. data=data;
+          this.next=null;
+          
+        }
+      }
+ class LL{
+        Node head;
+        Node tail;
+        int size;
+       LL(){
+        this.size=0;
+      }
+ void insertLast(int data){
+        Node newnode=new Node(data);
+   
+        if(head==null && tail==null){
+          
+           head=newnode;
+           tail=newnode;
+        }
+        else{
+          tail.next=newnode;
+          tail=newnode;
+        }
+      }
+     
+     
+      
+      }
+     
+    
+
+public class Main
+{
+	public static void main (String[] args) throws java.lang.Exception
+	{
+      LL list1=new LL();
+      LL list2=new LL();
+		Scanner sc=new Scanner(System.in);
+      int n=sc.nextInt();
+      int m=sc.nextInt();
+      for(int i=0; i<n; i++){
+        int x=sc.nextInt();
+         list1.insertLast(x);
+      }
+       for(int i=0; i<m; i++){
+        int x=sc.nextInt();
+         list2.insertLast(x);
+      }
+      if(n!=m){
+        System.out.println("0");
+      }else{
+      Node i=list1.head;   // head of list 1
+      Node j=list2.head;  // head of list 2
+	
+          boolean flag=true;
+          while(i!=null){
+             if(i.data!=j.data){
+              flag=false;
+              break;
+             }
+            i=i.next;
+            j=j.next;
+             
+            }
+       
+        if(flag==true){
+          System.out.println("1");
+        }else{
+          System.out.println("0");
+        }
+     }
+}}
+
+  
